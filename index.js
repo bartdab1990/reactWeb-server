@@ -14,8 +14,6 @@ const server = new ApolloServer({
   context: ({ req }) => ({ req, pubsub })
 });
 
-server.applyMiddleware({ res, path: '/graphql' });
-
 mongoose
   .connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
